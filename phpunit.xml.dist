@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="tests/unit/bootstrap.php"
+         colors="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false">
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="false">
+            <directory suffix=".php">__PLUGIN_SOURCE_PATH__</directory>
+            <exclude>
+                <directory>__PLUGIN_SOURCE_PATH__/Application</directory>
+                <directory>__PLUGIN_SOURCE_PATH__/bin</directory>
+                <directory>__PLUGIN_SOURCE_PATH__/models</directory>
+                <directory>__PLUGIN_SOURCE_PATH__/tests</directory>
+                <directory>__PLUGIN_SOURCE_PATH__/vendor</directory>
+                <directory>__PLUGIN_SOURCE_PATH__/views</directory>
+                <file>__PLUGIN_SOURCE_PATH__/autoload.php</file>
+                <file>__PLUGIN_SOURCE_PATH__/metadata.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+    <testsuites>
+        <testsuite name="main">
+            <directory>./tests/unit</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <const name="OXID_SOURCE_PATH" value="__OXID_SOURCE_PATH__"/>
+        <const name="PLUGIN_SOURCE_PATH" value="__PLUGIN_SOURCE_PATH__"/>
+    </php>
+</phpunit>
